@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PocketCounselor</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .feature {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .feature h3 {
+      margin-top: 0;
+      color: #4f46e5;
+    }
+    .screenshot-placeholder {
+      background: #e5e7eb;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    form {
+      margin-top: 2rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    input[type="email"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      width: calc(100% - 1rem);
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Pocket%20Counselor%20Logo.png" alt="PocketCounselor Logo" />
+    <h1>PocketCounselor</h1>
+    <p>Personalized guidance for students, built just for you.</p>
+  </header>
+
+  <section>
+    <h2>What We Offer</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Internship & Program Opportunities</h3>
+        <p>Explore valuable internships and a range of paid/unpaid programs tailored to your interests and career goals.</p>
+      </div>
+      <div class="feature">
+        <h3>Volunteering</h3>
+        <p>Engage in meaningful volunteer work to gain experience and contribute to your community.</p>
+      </div>
+      <div class="feature">
+        <h3>College Suggestions</h3>
+        <p>Receive personalized college recommendations based on your academic interests and preferences.</p>
+      </div>
+      <div class="feature">
+        <h3>Course Selection</h3>
+        <p>Get expert guidance on choosing the right courses for your goals and future plans.</p>
+      </div>
+    </div>
+
+    <div class="screenshot-placeholder">
+      [ Screenshot Placeholder ]
+    </div>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <h2>Stay Updated</h2>
+      <p>Sign up to be notified when PocketCounselor launches:</p>
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <br/>
+      <button type="submit">Notify Me</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a><br>
+      &copy; 2025 PocketCounselor
+    </p>
+  </footer>
+</body>
+</html>
