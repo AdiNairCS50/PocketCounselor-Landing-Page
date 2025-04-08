@@ -136,11 +136,12 @@
       <img src="Account_Page.png" alt="Account Page" />
     </div>
 
-    <form action="https://script.google.com/macros/s/AKfycbwWnyQAIIl3p50cU7aW5d5FhP6fctQItCEnjmqJfAKSXLWfUOQm09MyoKaRQFA7xNgR/exec" method="POST">
+    <form id="emailForm" action="https://script.google.com/macros/s/AKfycbwWnyQAIIl3p50cU7aW5d5FhP6fctQItCEnjmqJfAKSXLWfUOQm09MyoKaRQFA7xNgR/exec" method="POST">
       <h2>Stay Updated</h2>
       <p>Sign up to be notified when PocketCounselor launches:</p>
       <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">Notify Me</button>
+      <button type="submit" id="submitButton">Notify Me</button>
+      <p id="formMessage" style="display: none; margin-top: 10px;"></p>
     </form>
   </section>
 
@@ -150,5 +151,42 @@
       &copy; 2025 PocketCounselor
     </p>
   </footer>
+  
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const submitButton = document.getElementById('submitButton');
+      const formMessage = document.getElementById('formMessage');
+      const email = form.email.value;      
+      submitButton.textContent = 'Submitting...';
+      submitButton.disabled = true;      
+      const formData = new FormData();
+      formData.append('email', email);      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          formMessage.style.display = 'block';
+          formMessage.style.color = '#4f46e5';
+          formMessage.textContent = 'Thank you! You will be notified when we launch.';
+          form.reset();
+        } else {
+          throw new Error('Something went wrong. Please try again later.');
+        }
+      })
+      .catch(error => {
+        formMessage.style.display = 'block';
+        formMessage.style.color = '#dc2626';
+        formMessage.textContent = error.message;
+      })
+      .finally(() => {
+        submitButton.textContent = 'Notify Me';
+        submitButton.disabled = false;
+      });
+    });
+  </script>
 </body>
 </html>
