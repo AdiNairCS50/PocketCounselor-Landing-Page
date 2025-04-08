@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,7 +9,6 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      line-height: 1.6;
       background-color: #f9fafb;
       color: #1f2937;
     }
@@ -50,16 +50,19 @@
       margin-top: 0;
       color: #4f46e5;
     }
-    .screenshot-placeholder {
-      background: #e5e7eb;
-      height: 200px;
+    .carousel {
+      margin-top: 2rem;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #6b7280;
-      font-weight: 600;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+    .carousel img {
+      height: 300px;
       border-radius: 8px;
-      margin-top: 1rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.15);
+      scroll-snap-align: center;
+      flex-shrink: 0;
     }
     form {
       margin-top: 2rem;
@@ -73,7 +76,8 @@
       font-size: 1rem;
       border: 1px solid #d1d5db;
       border-radius: 4px;
-      width: calc(100% - 1rem);
+      width: 100%;
+      box-sizing: border-box;
     }
     button {
       margin-top: 1rem;
@@ -125,15 +129,17 @@
       </div>
     </div>
 
-    <div class="screenshot-placeholder">
-      [ Screenshot Placeholder ]
+    <div class="carousel">
+      <img src="Home_Page.png" alt="Home Page" />
+      <img src="Login_Page.png" alt="Login Page" />
+      <img src="Account_Page.png" alt="Account Page" />
+      <img src="Internships_Page.png" alt="Internships Page" />
     </div>
 
     <form action="https://script.google.com/macros/s/AKfycby43clHrXtsJHXMYvVk-gesJvqGhOx9GiZeCywSC7RdbinFgnQy7c3dUVd4QYoZz23S/exec" method="POST">
       <h2>Stay Updated</h2>
       <p>Sign up to be notified when PocketCounselor launches:</p>
       <input type="email" name="email" placeholder="Enter your email" required />
-      <br/>
       <button type="submit">Notify Me</button>
     </form>
   </section>
