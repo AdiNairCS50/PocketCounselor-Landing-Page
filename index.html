@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PocketCounselor is an AI-powered platform providing personalized guidance for students, including internships, volunteering, and college advice." />
   <title>PocketCounselor</title>
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -31,6 +33,16 @@
       font-size: 1.2rem;
       margin-top: 0.5rem;
     }
+    .hero-button {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: white;
+      color: #4f46e5;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+    }
     section {
       padding: 2rem 1.5rem;
       max-width: 900px;
@@ -46,6 +58,11 @@
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .feature i {
+      font-size: 1.5rem;
+      color: #4f46e5;
+      margin-right: 0.5rem;
     }
     .feature h3 {
       margin-top: 0;
@@ -100,6 +117,12 @@
       color: #4f46e5;
       text-decoration: none;
     }
+    .contact {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #374151;
+    }
   </style>
 </head>
 <body>
@@ -107,25 +130,26 @@
     <img src="PocketCounselor_Logo.png" alt="PocketCounselor Logo" />
     <h1>PocketCounselor Coming Soon!</h1>
     <p>An AI-powered startup that aims to provide personalized guidance for students, built just for you.</p>
+    <a class="hero-button" href="#emailForm">Get Notified</a>
   </header>
 
   <section>
     <h2>What We Offer</h2>
     <div class="features">
       <div class="feature">
-        <h3>Internship & Program Opportunities</h3>
+        <h3><i class="fas fa-briefcase"></i>Internship & Program Opportunities</h3>
         <p>Explore valuable internships and a range of paid/unpaid programs tailored to your interests and career goals.</p>
       </div>
       <div class="feature">
-        <h3>Volunteering</h3>
+        <h3><i class="fas fa-hands-helping"></i>Volunteering</h3>
         <p>Engage in the provided volunteer work to gain experience and contribute to your community.</p>
       </div>
       <div class="feature">
-        <h3>College Suggestions</h3>
+        <h3><i class="fas fa-university"></i>College Suggestions</h3>
         <p>Receive personalized college recommendations based on your academic interests and preferences.</p>
       </div>
       <div class="feature">
-        <h3>Course Selection</h3>
+        <h3><i class="fas fa-book"></i>Course Selection</h3>
         <p>Get expert guidance on choosing the right high school courses for your goals and future plans.</p>
       </div>
     </div>
@@ -144,26 +168,30 @@
       <button type="submit" id="submitButton">Notify Me</button>
       <p id="formMessage" style="display: none; margin-top: 10px;"></p>
     </form>
+
+    <div class="contact">
+      <p>Questions? Reach out to us at <a href="mailto:support@pocketcounselor.org">support@pocketcounselor.org</a></p>
+    </div>
   </section>
 
   <footer>
     <p>
-      <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a><br>
+      <a href="privacy.html">Privacy Policy and Terms of Use</a><br>
       &copy; 2025 PocketCounselor
     </p>
   </footer>
-  
+
   <script>
     document.getElementById('emailForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const form = this;
       const submitButton = document.getElementById('submitButton');
       const formMessage = document.getElementById('formMessage');
-      const email = form.email.value;      
+      const email = form.email.value;
       submitButton.textContent = 'Submitting...';
-      submitButton.disabled = true;      
+      submitButton.disabled = true;
       const formData = new FormData();
-      formData.append('email', email);      
+      formData.append('email', email);
       fetch(form.action, {
         method: 'POST',
         body: formData
