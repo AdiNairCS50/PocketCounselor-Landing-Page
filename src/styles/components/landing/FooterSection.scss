@@ -1,0 +1,110 @@
+// FooterSection.scss
+
+.footer-section {
+  background: #18181b;
+  color: #fff;
+  padding: 3rem 0 0 0;
+  font-family: inherit;
+
+  :root.dark & {
+    background: #18181b;
+    color: #fff;
+  }
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer-brand {
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: #d1d5db;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 1rem;
+    a {
+      color: #d1d5db;
+      transition: color 0.2s;
+      &:hover {
+        color: #fff;
+      }
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+      }
+    }
+  }
+}
+
+.footer-col {
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin-bottom: 0.75rem;
+      a {
+        color: #d1d5db;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.2s;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.footer-app-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  a {
+    display: block;
+    img {
+      height: 2.5rem;
+      width: auto;
+      display: block;
+    }
+  }
+}
+
+.footer-divider {
+  border-top: 1px solid #27272a;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1rem;
+  margin-bottom: 0;
+}

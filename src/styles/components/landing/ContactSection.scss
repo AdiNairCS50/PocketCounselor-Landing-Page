@@ -1,0 +1,234 @@
+// ContactSection.scss
+
+.contact-section {
+  padding: 5rem 0 8rem 0;
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
+
+  :root.dark & {
+    background: linear-gradient(135deg, rgb(28, 3, 52), rgb(9, 37, 82));
+  }
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: #18181b;
+    :root.dark & {
+      color: #fff;
+    }
+  }
+  &__description {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: #64748b;
+    :root.dark & {
+      color: #cbd5e1;
+    }
+  }
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.1),
+    0 1.5px 4px 0 rgba(31, 41, 55, 0.08);
+  padding: 1rem 2.25rem 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  transition: box-shadow 0.3s;
+
+  .contact-header__title {
+    margin-bottom: 0 !important;
+  }
+
+  &:hover {
+    box-shadow: 0 12px 32px 0 rgba(31, 41, 55, 0.16),
+      0 2px 8px 0 rgba(31, 41, 55, 0.1);
+  }
+
+  :root.dark & {
+    background: #18181b;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25),
+      0 1.5px 4px 0 rgba(0, 0, 0, 0.18);
+  }
+}
+
+.contact-info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.contact-info-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #a21caf;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  :root.dark & {
+    color: #c084fc;
+  }
+}
+
+.contact-info-title {
+  font-weight: 700;
+  color: #18181b;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  :root.dark & {
+    color: #fff;
+  }
+}
+
+.contact-info-desc {
+  color: #64748b;
+  font-size: 1rem;
+  :root.dark & {
+    color: #cbd5e1;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #334155;
+  :root.dark & {
+    color: #cbd5e1;
+  }
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  color: #18181b;
+  border: 1.5px solid #e5e7eb;
+  padding: 1rem 1.25rem;
+  font-size: 1.08rem;
+  margin-top: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: #a21caf;
+    box-shadow: 0 0 0 2px #c084fc44;
+    outline: none;
+  }
+
+  :root.dark & {
+    background: #27272a;
+    color: #fff;
+    border-color: #52525b;
+  }
+}
+
+.contact-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 1.1rem 0;
+  background: linear-gradient(90deg, #a21caf, #2563eb);
+  color: #fff;
+  border: none;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(147, 51, 234, 0.08);
+  cursor: pointer;
+  letter-spacing: 0.01em;
+
+  &:hover {
+    background: linear-gradient(90deg, #7c1fa0, #1d4ed8);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #c084fc44;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// Status messages for form submission
+.contact-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  &--success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+
+    :root.dark & {
+      background-color: #14532d;
+      color: #bbf7d0;
+      border-color: #166534;
+    }
+  }
+
+  &--error {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+
+    :root.dark & {
+      background-color: #7f1d1d;
+      color: #fecaca;
+      border-color: #dc2626;
+    }
+  }
+
+  span {
+    flex: 1;
+  }
+}

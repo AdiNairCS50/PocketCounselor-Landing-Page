@@ -1,0 +1,164 @@
+/* Minimal Ionic CSS - Only required styles for our components */
+
+/* Core Ionic variables */
+:root {
+  --ion-font-family: "Poppins", sans-serif;
+  --ion-color-primary: #0052e9;
+  --ion-color-primary-rgb: 0, 84, 233;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #004acd;
+  --ion-color-primary-tint: #1a65eb;
+
+  --ion-color-secondary: #0163aa;
+  --ion-color-secondary-rgb: 1, 99, 170;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #015796;
+  --ion-color-secondary-tint: #1a73b3;
+
+  --ion-color-tertiary: #7c65fb;
+  --ion-color-tertiary-rgb: 96, 48, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #542ae0;
+  --ion-color-tertiary-tint: #7045ff;
+
+  --ion-color-success: #10a530;
+  --ion-color-success-rgb: 45, 213, 91;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #28bb50;
+  --ion-color-success-tint: #42d96b;
+
+  --ion-color-warning: #ffc409;
+  --ion-color-warning-rgb: 255, 196, 9;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0ac08;
+  --ion-color-warning-tint: #ffca22;
+
+  --ion-color-danger: #c5000f;
+  --ion-color-danger-rgb: 197, 0, 15;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #ad000d;
+  --ion-color-danger-tint: #cb1a27;
+
+  --ion-color-light: #f6f8fc;
+  --ion-color-light-rgb: 246, 248, 252;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d8dade;
+  --ion-color-light-tint: #f7f9fc;
+
+  --ion-color-medium: #5f5f5f;
+  --ion-color-medium-rgb: 95, 95, 95;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #545454;
+  --ion-color-medium-tint: #6f6f6f;
+
+  --ion-color-dark: #2f2f2f;
+  --ion-color-dark-rgb: 47, 47, 47;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #292929;
+  --ion-color-dark-tint: #444444;
+
+  --ion-background-color: #f6f8fc;
+  --ion-background-color-rgb: 246, 248, 252;
+
+  --ion-text-color-primary: #000000;
+  --ion-text-color-rgb: 47, 47, 47;
+
+  --ion-text-color-secondary: #5f5f5f;
+  --ion-text-color-secondary-rgb: 95, 95, 95;
+
+  --ion-text-color-tertiary: #888888;
+  --ion-text-color-tertiary-rgb: 136, 136, 136;
+
+  --ion-text-color-success: #ffffff;
+  --ion-color-purple: #9564ff;
+  --ion-color-purple-rgb: 106, 100, 255;
+  --ion-color-purple-contrast: #ffffff;
+  --ion-color-purple-contrast-rgb: 255, 255, 255;
+  --ion-color-purple-shade: #8c58e0;
+  --ion-color-purple-tint: #a575ff;
+}
+
+/* IonPage styles */
+.ion-page {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  contain: layout style;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* IonContent styles */
+ion-content {
+  --background: var(--ion-background-color, #fff);
+  --color: var(--ion-text-color, #000);
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --keyboard-offset: 0px;
+  --offset-top: 0px;
+  --offset-bottom: 0px;
+  --overflow: auto;
+  display: block;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--ion-font-family, inherit);
+  contain: size style;
+}
+
+.ion-content-scroll-host {
+  left: 0;
+  right: 0;
+  top: calc(var(--offset-top) * 1px);
+  bottom: calc(var(--offset-bottom) * 1px);
+  padding-left: calc(var(--padding-start) * 1px);
+  padding-right: calc(var(--padding-end) * 1px);
+  padding-top: calc(var(--padding-top) * 1px);
+  padding-bottom: calc(var(--padding-bottom) * 1px);
+  position: absolute;
+  overflow: var(--overflow);
+}
+
+/* IonCard styles */
+ion-card {
+  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  --color: var(--ion-color-step-600, #666666);
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  font-family: var(--ion-font-family, inherit);
+  overflow: hidden;
+  display: block;
+  position: relative;
+  background: var(--background);
+  color: var(--color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+ion-card-content {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}

@@ -1,0 +1,26 @@
+// LandingPage.scss
+
+.landing-page {
+  min-height: 100vh;
+  background-color: white;
+  color: #111827;
+
+  :root.dark & {
+    background-color: #111827;
+    color: white;
+  }
+}
+
+.landing-page-content {
+  --padding-bottom: 0px;
+
+  main {
+    margin-bottom: 0px !important;
+  }
+}
+
+app-footer-section,
+.footer-section {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}

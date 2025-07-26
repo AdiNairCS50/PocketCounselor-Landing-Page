@@ -1,0 +1,40 @@
+// ThemeToggle.scss
+
+.theme-toggle-button {
+  padding: 0.5rem; // p-2
+  border-radius: 9999px; // rounded-full
+  border: none; // Remove default button border
+  outline: none; // Remove default button outline
+  cursor: pointer; // Show pointer cursor
+  transition-property: background-color, color;
+  transition-duration: 300ms; // duration-300
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // Light mode styling
+  &.light {
+    background-color: #f3f4f6; // bg-gray-100
+    color: #374151; // text-gray-700
+
+    &:hover {
+      background-color: #e5e7eb; // hover:bg-gray-200
+    }
+  }
+
+  // Dark mode styling
+  &.dark {
+    background-color: #1f2937; // bg-gray-800
+    color: #e5e7eb; // text-gray-200
+
+    &:hover {
+      background-color: #374151; // hover:bg-gray-700
+    }
+  }
+
+  // Icon styles
+  .theme-icon {
+    width: 1.25rem; // w-5
+    height: 1.25rem; // h-5
+  }
+}

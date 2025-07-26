@@ -1,0 +1,178 @@
+// AppDemoSection.scss
+
+.app-demo-section {
+  padding: 2.5rem 1rem;
+  padding-top: 3rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(147, 51, 234, 0.05),
+    rgba(59, 130, 246, 0.05)
+  );
+
+  :root.dark & {
+    background: linear-gradient(
+      to bottom right,
+      rgb(28, 3, 52),
+      rgb(9, 37, 82)
+    );
+  }
+
+  @media (min-width: 768px) {
+    padding: 4rem 2rem;
+    padding-top: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 5rem;
+    padding-top: 5rem;
+  }
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+
+  &__title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--ion-color-dark);
+    line-height: 1.2;
+
+    @media (min-width: 768px) {
+      font-size: 2.125rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 2.25rem;
+    }
+
+    :root.dark & {
+      color: var(--ion-color-light);
+    }
+  }
+
+  &__description {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: var(--ion-color-medium);
+    line-height: 1.5;
+    padding: 0 0.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+      padding: 0;
+    }
+
+    :root.dark & {
+      color: var(--ion-color-light-shade);
+    }
+  }
+}
+
+.iphone-mockup {
+  position: relative;
+  margin: 0 auto;
+  width: 280px;
+  height: 560px;
+  background-color: linear-gradient(
+    to bottom right,
+    rgb(40, 8, 69),
+    rgb(5, 25, 58)
+  );
+  border-radius: 2.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  @media (min-width: 768px) {
+    width: 300px;
+    height: 600px;
+    border: 14px solid #000000;
+  }
+
+  @media (min-width: 1024px) {
+    width: 320px;
+    height: 640px;
+    border: 0px solid #c41515;
+  }
+
+  &__screen {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    background-color: var(--ion-color-light);
+    overflow: hidden;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      top: 14px;
+      left: 14px;
+      width: calc(100% - 28px);
+      height: calc(100% - 28px);
+    }
+
+    @media (min-width: 1024px) {
+      top: 16px;
+      left: 16px;
+      width: calc(100% - 32px);
+      height: calc(100% - 32px);
+    }
+
+    :root.dark & {
+      background-color: #000000;
+    }
+  }
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    border-radius: 2rem;
+  }
+}
+
+.demo-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  border-radius: 1.75rem;
+  background: #000;
+  max-width: 100%;
+  max-height: 100%;
+
+  @media (min-width: 768px) {
+    border-radius: 2rem;
+  }
+}
