@@ -52,16 +52,16 @@ const FeaturesSection: React.FC = () => {
         "Discover internships perfectly matched to your background, interests, and career goals. Our AI analyzes thousands of opportunities to find your ideal fit.",
     },
     {
-      icon: <MailIcon size={32} />, // 2rem
-      title: "Prestigious Programs",
-      description:
-        "Access exclusive scholarships, fellowships, and prestigious programs tailored to your academic profile. Uncover hidden opportunities automatically.",
-    },
-    {
       icon: <UsersIcon size={32} />, // 2rem
       title: "Volunteer Opportunities",
       description:
         "Coming soon! Find volunteer opportunities that match your skills and interests. Make a positive impact while building your resume.",
+    },
+    {
+      icon: <MailIcon size={32} />, // 2rem
+      title: "Course Selections",
+      description:
+        "Coming soon! Get personalized AI-powered course recommendations based on your academic profile and career goals.",
     },
     {
       icon: <Building2Icon size={32} />, // 2rem
