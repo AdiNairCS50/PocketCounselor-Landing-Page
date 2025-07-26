@@ -14,148 +14,43 @@
 
 ## 📖 About PocketCounselor
 
-PocketCounselor is revolutionizing career development and educational opportunities by making personalized guidance accessible anytime, anywhere. Our AI-powered platform discovers and matches you with perfect internships, prestigious programs, scholarships, and career opportunities tailored to your unique background, interests, and goals.
+PocketCounselor revolutionizes career development by making personalized guidance accessible anytime, anywhere. Our AI-powered platform discovers and matches users with perfect internships, prestigious programs, scholarships, and career opportunities tailored to their unique background, interests, and goals.
 
-This repository contains the beautifully crafted waitlist landing page that introduces users to PocketCounselor and allows them to join our early access program.
+This repository showcases the beautifully crafted waitlist landing page built with modern React, TypeScript, and SCSS.
 
-## ✨ Features
+## ✨ Key Features
 
-### 🎯 **AI-Powered Opportunity Discovery**
+**🎯 AI-Powered Opportunity Discovery**
 
-- **Smart Internship Matching** - AI analyzes thousands of opportunities to find your ideal fit
-- **Prestigious Programs** - Access exclusive scholarships, fellowships, and prestigious programs
-- **Volunteer Opportunities** - Coming soon! Find volunteer work that matches your skills
-- **College & Career Guidance** - Coming soon! AI-driven academic and career path recommendations
-- **Personalized Matching** - Tailored to your background, interests, and career goals
+- Smart internship matching with thousands of opportunities
+- Access to exclusive scholarships, fellowships, and prestigious programs
+- Personalized matching based on background, interests, and career goals
 
-### 🎨 **Beautiful Landing Page**
+**🎨 Professional Landing Page**
 
-- **Hero Section** - Compelling introduction with clear value proposition
-- **Features Showcase** - Highlight key PocketCounselor capabilities
-- **App Demo** - Preview of the actual application interface
-- **Testimonials** - Social proof from early users
-- **Contact Information** - Easy ways to get in touch
+- Responsive design with dark/light theme support
+- Hero section, features showcase, app demo, and testimonials
+- Seamless waitlist signup with email verification
+- Google Apps Script integration for data management
 
-### 🛠 **Technical Excellence**
+## 🚀 Live Website
 
-- **Responsive Design** - Perfect experience on all devices
-- **Dark/Light Theme** - User preference support
-- **Modern React** - Built with latest React 18 & TypeScript
-- **Optimized Performance** - Fast loading with Vite build system
-- **Email Integration** - Google Apps Script powered waitlist management
-
-### 📧 **Waitlist Management**
-
-- **Seamless Signup** - Simple modal-based registration
-- **Email Verification** - Automated confirmation system
-- **Spam Prevention** - Built-in security measures
-- **Data Management** - Organized Google Sheets integration
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn package manager
-
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/PavanCodesNY/Waitlist-Page-PC.git
-   cd Waitlist-Page-PC
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser**
-   ```
-   http://localhost:5173
-   ```
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── landing/              # Landing page sections
-│   │   ├── HeroSection.tsx
-│   │   ├── FeaturesSection.tsx
-│   │   ├── AppDemoSection.tsx
-│   │   ├── TestimonialsSection.tsx
-│   │   ├── ContactSection.tsx
-│   │   └── FooterSection.tsx
-│   ├── shared/               # Reusable components
-│   │   ├── Header.tsx
-│   │   └── ThemeToggle.tsx
-│   └── WaitlistModal.tsx     # Signup modal
-├── styles/                   # SCSS styling
-│   ├── components/           # Component-specific styles
-│   ├── globals.css           # Global styles
-│   └── variables.css         # CSS custom properties
-└── assets/                   # Static assets
-    └── images/
-```
+Visit **[pocketcounselor.org](https://pocketcounselor.org)** to experience the waitlist page and join early access.
 
 ## 🛠 Technology Stack
 
-- **Frontend Framework:** React 18 with TypeScript
-- **Build Tool:** Vite for fast development and optimized builds
+- **Frontend:** React 18 with TypeScript
 - **Styling:** SCSS with CSS custom properties
-- **Backend Integration:** Google Apps Script for email management
-- **Email Service:** Gmail API for automated responses
-- **Data Storage:** Google Sheets for waitlist management
-
-## 📧 Email System
-
-The project includes a comprehensive email management system:
-
-- **`Enhanced-Google-Apps-Script.js`** - Main backend logic
-- **`Email-Management-Functions.js`** - Email handling utilities
-- **`Simple-5-Field-Script.js`** - Streamlined form processing
-- **`Debug-Email-Script.js`** - Development and testing tools
-
-## 🚀 Getting Started with PocketCounselor
-
-1. **Visit the Landing Page** - Discover how AI can transform your career journey
-2. **Join the Waitlist** - Click "Join Waitlist" and tell us about your interests
-3. **Verify Your Email** - Check your inbox for confirmation
-4. **Get Early Access** - Be first to discover perfect internships and opportunities
-
-## 🤝 Contributing
-
-We welcome contributions! Whether it's:
-
-- 🐛 Bug reports and fixes
-- ✨ Feature suggestions and implementations
-- 📚 Documentation improvements
-- 🎨 Design enhancements
-
-Please feel free to open issues or submit pull requests.
+- **Build Tool:** Vite for optimized performance
+- **Backend:** Google Apps Script with Gmail API
+- **Data Storage:** Google Sheets integration
 
 ## 📱 Connect with PocketCounselor
 
 - **Website:** [pocketcounselor.org](https://pocketcounselor.org)
-- **Email:** [Contact through waitlist]
-- **LinkedIn:** [PocketCounselor]
-- **Twitter:** [@PocketCounselor]
+- **Email:** Contact through waitlist
+- **LinkedIn:** PocketCounselor
+- **Twitter:** @PocketCounselor
 
 ## 📄 License
 
