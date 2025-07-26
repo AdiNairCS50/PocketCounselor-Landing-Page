@@ -3,7 +3,7 @@
 <div align="center">
   <img src="public/images/PC-WhiteBackground.png" alt="PocketCounselor Logo" width="200" />
   
-  <h3>Join the future of career development</h3>
+  <h3>Your Counselor in Your Pocket</h3>
   <p><em>Be among the first to experience AI-powered opportunity discovery</em></p>
   
   [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
@@ -152,7 +152,7 @@ Please feel free to open issues or submit pull requests.
 
 ## 📱 Connect with PocketCounselor
 
-- **Website:** [Coming Soon]
+- **Website:** [pocketcounselor.org](https://pocketcounselor.org)
 - **Email:** [Contact through waitlist]
 - **LinkedIn:** [PocketCounselor]
 - **Twitter:** [@PocketCounselor]
@@ -165,5 +165,5 @@ This project is proprietary software developed for PocketCounselor. All rights r
 
 <div align="center">
   <p><strong>Ready to discover your perfect career opportunities?</strong></p>
-  <p><a href="https://pockecounselor-waitlist.com">🚀 Join the Waitlist Today</a></p>
+  <p><a href="https://pocketcounselor.org">🚀 Join the Waitlist Today</a></p>
 </div>
