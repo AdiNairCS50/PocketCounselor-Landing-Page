@@ -3,8 +3,8 @@
 <div align="center">
   <img src="public/images/PC-WhiteBackground.png" alt="PocketCounselor Logo" width="200" />
   
-  <h3>Join the future of mental health support</h3>
-  <p><em>Be among the first to experience personalized AI-powered counseling</em></p>
+  <h3>Join the future of career development</h3>
+  <p><em>Be among the first to experience AI-powered opportunity discovery</em></p>
   
   [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -14,11 +14,19 @@
 
 ## 📖 About PocketCounselor
 
-PocketCounselor is revolutionizing mental health support by making personalized counseling accessible anytime, anywhere. Our AI-powered platform provides intelligent, empathetic, and evidence-based mental health guidance tailored to your unique needs.
+PocketCounselor is revolutionizing career development and educational opportunities by making personalized guidance accessible anytime, anywhere. Our AI-powered platform discovers and matches you with perfect internships, prestigious programs, scholarships, and career opportunities tailored to your unique background, interests, and goals.
 
 This repository contains the beautifully crafted waitlist landing page that introduces users to PocketCounselor and allows them to join our early access program.
 
 ## ✨ Features
+
+### 🎯 **AI-Powered Opportunity Discovery**
+
+- **Smart Internship Matching** - AI analyzes thousands of opportunities to find your ideal fit
+- **Prestigious Programs** - Access exclusive scholarships, fellowships, and prestigious programs
+- **Volunteer Opportunities** - Coming soon! Find volunteer work that matches your skills
+- **College & Career Guidance** - Coming soon! AI-driven academic and career path recommendations
+- **Personalized Matching** - Tailored to your background, interests, and career goals
 
 ### 🎨 **Beautiful Landing Page**
 
@@ -124,12 +132,12 @@ The project includes a comprehensive email management system:
 - **`Simple-5-Field-Script.js`** - Streamlined form processing
 - **`Debug-Email-Script.js`** - Development and testing tools
 
-## 🎯 Getting Started with PocketCounselor
+## 🚀 Getting Started with PocketCounselor
 
-1. **Visit the Landing Page** - Learn about our mission and features
-2. **Join the Waitlist** - Click "Join Waitlist" and fill out the simple form
+1. **Visit the Landing Page** - Discover how AI can transform your career journey
+2. **Join the Waitlist** - Click "Join Waitlist" and tell us about your interests
 3. **Verify Your Email** - Check your inbox for confirmation
-4. **Stay Updated** - Receive exclusive updates about our launch
+4. **Get Early Access** - Be first to discover perfect internships and opportunities
 
 ## 🤝 Contributing
 
@@ -156,6 +164,6 @@ This project is proprietary software developed for PocketCounselor. All rights r
 ---
 
 <div align="center">
-  <p><strong>Ready to transform your mental health journey?</strong></p>
+  <p><strong>Ready to discover your perfect career opportunities?</strong></p>
   <p><a href="https://pockecounselor-waitlist.com">🚀 Join the Waitlist Today</a></p>
 </div>
