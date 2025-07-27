@@ -24,7 +24,7 @@ const ContactSection: React.FC = () => {
               <div>
                 <div className="contact-info-title">Email</div>
                 <div className="contact-info-desc">
-                  support@pocketcounselor.com
+                  support@pocketcounselor.org
                 </div>
               </div>
             </div>
