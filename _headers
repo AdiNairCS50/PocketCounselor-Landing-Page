@@ -1,26 +1,26 @@
-/*
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://submit-form.com https://formspree.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://submit-form.com https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://submit-form.com https://formspree.io
+/\*
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://submit-form.com https://formspree.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://submit-form.com https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://submit-form.com https://formspree.io
 
-/assets/*.js
-  Content-Type: text/javascript
-  X-Content-Type-Options: nosniff
+/assets/\*.js
+Content-Type: text/javascript
+X-Content-Type-Options: nosniff
 
-/assets/*.mjs  
-  Content-Type: text/javascript
-  X-Content-Type-Options: nosniff
+/assets/\*.mjs  
+ Content-Type: text/javascript
+X-Content-Type-Options: nosniff
 
-/*.js
-  Content-Type: text/javascript
-  X-Content-Type-Options: nosniff
+/\*.js
+Content-Type: text/javascript
+X-Content-Type-Options: nosniff
 
-/*.mjs
-  Content-Type: text/javascript
-  X-Content-Type-Options: nosniff: DENY
+/\*.mjs
+Content-Type: text/javascript
+X-Content-Type-Options: nosniff: DENY
 X-Content-Type-Options: nosniff
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 Referrer-Policy: strict-origin-when-cross-origin
