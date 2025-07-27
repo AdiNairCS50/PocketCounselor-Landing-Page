@@ -32,13 +32,6 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
         Intl.DateTimeFormat().resolvedOptions().timeZone
       );
 
-      // Debug: Log what we're sending
-      console.log("Sending to Google Apps Script:", {
-        name: name,
-        email: email,
-        formDataEntries: [...formData.entries()],
-      });
-
       // Send to Google Apps Script
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbxQmDCJRgnEEOlxdjCstgpXuSCY3JOJWWAEBTItWknjPTgaVx4EKIOJSt9T-hKFGco/exec", // Replace with your NEW URL after redeployment
@@ -53,8 +46,6 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
       }
 
       const result = await response.text();
-      console.log("Google Apps Script Response:", result);
-      console.log("Waitlist signup successful:", { name, email });
 
       setIsSubmitted(true);
       setIsSubmitting(false);
@@ -68,7 +59,6 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
         onClose();
       }, 3000);
     } catch (error) {
-      console.error("Error submitting to waitlist:", error);
       setError("Failed to join waitlist. Please try again.");
       setIsSubmitting(false);
     }

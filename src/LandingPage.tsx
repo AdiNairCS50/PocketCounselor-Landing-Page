@@ -16,10 +16,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   useEffect(() => {
     document.title = "PocketCounselor - Expert Guidance in Your Pocket";
 
-    console.log(
-      "🔧 LandingPage: Applying scrolling fix (Ionic version - simplified)..."
-    );
-
     const oldScrollFixStyle = document.getElementById(
       "landing-page-scroll-fix"
     );
@@ -28,8 +24,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     }
 
     document.body.style.position = "static";
-
-    console.log("✅ LandingPage: Body position set to static.");
 
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -67,9 +61,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       document.body.style.removeProperty("position");
 
       document.removeEventListener("click", handleAnchorClick);
-      console.log(
-        "🔄 LandingPage: Scrolling fix cleanup (Ionic version - simplified)"
-      );
     };
   }, []);
 

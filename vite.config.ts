@@ -27,10 +27,7 @@ export default defineConfig({
           copyFileSync("web.config", "dist/web.config");
           copyFileSync("_headers", "dist/_headers");
         } catch (error) {
-          console.warn(
-            "Warning: Could not copy server configuration files:",
-            error
-          );
+          // Silently handle missing server config files
         }
       },
     },

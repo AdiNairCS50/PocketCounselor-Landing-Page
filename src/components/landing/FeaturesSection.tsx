@@ -77,24 +77,9 @@ const FeaturesSection: React.FC = () => {
     const threshold = isMobile ? 0.2 : 0.4; // Lower threshold for mobile
     const rootMargin = isMobile ? "0px 0px -100px 0px" : "0px 0px -200px 0px"; // Less margin for mobile
 
-    console.log(
-      "Mobile detection:",
-      isMobile,
-      "threshold:",
-      threshold,
-      "rootMargin:",
-      rootMargin
-    );
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log(
-            "IntersectionObserver triggered:",
-            entry.isIntersecting,
-            "on mobile:",
-            isMobile
-          );
           if (entry.isIntersecting) {
             setIsVisible(true);
           }
@@ -115,7 +100,6 @@ const FeaturesSection: React.FC = () => {
       const triggerPoint = window.innerHeight * 0.8; // Trigger when 80% down viewport
 
       if (rect.top < triggerPoint) {
-        console.log("Scroll fallback triggered on mobile");
         setIsVisible(true);
       }
     };
