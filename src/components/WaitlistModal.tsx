@@ -14,6 +14,15 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
 
+  const handleClose = () => {
+    // Reset form state when modal is closed
+    setIsSubmitted(false);
+    setEmail("");
+    setName("");
+    setError("");
+    onClose();
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -50,14 +59,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
       setIsSubmitted(true);
       setIsSubmitting(false);
 
-      // Reset form after 3 seconds and close modal
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setEmail("");
-        setName("");
-        setError("");
-        onClose();
-      }, 3000);
+      // Don't auto-close - let user manually close the modal
     } catch (error) {
       setError("Failed to join waitlist. Please try again.");
       setIsSubmitting(false);
@@ -67,11 +69,11 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="waitlist-modal-overlay" onClick={onClose}>
+    <div className="waitlist-modal-overlay" onClick={handleClose}>
       <div className="waitlist-modal" onClick={(e) => e.stopPropagation()}>
         <button
           className="waitlist-modal-close"
-          onClick={onClose}
+          onClick={handleClose}
           aria-label="Close modal"
           title="Close modal"
         >
@@ -133,7 +135,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                 verification link to secure your spot on the waitlist.
               </p>
               <p className="waitlist-success-note">
-                Don't see it? Check your spam folder and add
+                Don't see it? Check your SPAM folder and ADD
                 pocketcounselorco@gmail.com to your contacts for future updates.
               </p>
             </div>
