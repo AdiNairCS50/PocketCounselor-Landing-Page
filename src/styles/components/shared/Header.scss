@@ -107,19 +107,21 @@
 
     .btn-desktop-primary {
       background-color: #7c3aed;
-      color: white;
+      color: white !important;
       border: none;
       text-decoration: none;
       cursor: pointer;
       &:hover {
         background-color: #6d28d9;
+        color: white !important;
       }
 
       :root.dark & {
         background-color: #7c3aed;
-        color: white;
+        color: white !important;
         &:hover {
           background-color: #6d28d9;
+          color: white !important;
         }
       }
 
@@ -209,7 +211,7 @@
     margin-right: 1.5rem;
     margin-top: 0.5rem;
     background: linear-gradient(to right, #a21caf, #2563eb);
-    color: white;
+    color: white !important;
     font-weight: 500;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -220,6 +222,10 @@
     display: block;
     text-decoration: none;
     border: none;
+
+    &:hover {
+      color: white !important;
+    }
   }
 }
 
@@ -230,7 +236,7 @@
   color: rgba(255, 255, 255, 0.9);
 }
 .text-color-gray-900 {
-  color: #111827 !important;
+  color: #2a313a !important;
 }
 .text-color-gray-700 {
   color: #374151 !important;

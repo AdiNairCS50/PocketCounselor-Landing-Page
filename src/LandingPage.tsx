@@ -5,7 +5,7 @@ import HeroSection from "./components/landing/HeroSection";
 import FeaturesSection from "./components/landing/FeaturesSection";
 import ContactSection from "./components/landing/ContactSection";
 import FooterSection from "./components/landing/FooterSection";
-
+import AppDemoSection from "./components/landing/AppDemoSection";
 import "./styles/LandingPage.scss";
 
 interface LandingPageProps {

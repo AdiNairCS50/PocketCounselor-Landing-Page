@@ -1,10 +1,9 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
-@import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
-@theme {
+/* Custom color palette and design system */
+:root {
+  /* COLOR SYSTEM */
   --color-purple-50: #f5f3ff;
   --color-purple-100: #ede9fe;
   --color-purple-200: #ddd6fe;
@@ -29,46 +28,32 @@ http://ionicframework.com/docs/theming/ */
   --color-blue-900: #1e3a8a;
   --color-blue-950: #172554;
 
+  /* TYPOGRAPHY */
   --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
 
+  /* ANIMATIONS */
   --animate-fade-in: fadeIn 0.5s ease-in-out;
   --animate-slide-up: slideUp 0.5s ease-out;
+}
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+/* Animation keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  @keyframes slideUp {
-    0% {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

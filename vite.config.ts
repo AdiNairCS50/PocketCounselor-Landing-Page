@@ -1,10 +1,23 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
-import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    // Plugin to ensure correct MIME types
+    {
+      name: 'mime-fix',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url?.endsWith('.js') || req.url?.endsWith('.mjs')) {
+            res.setHeader('Content-Type', 'text/javascript');
+          }
+          next();
+        });
+      }
+    }
+  ],
   build: {
     outDir: "dist",
     sourcemap: true,
@@ -17,7 +30,10 @@ export default defineConfig({
         },
       },
     },
+    // Copy server configuration files to dist
+    copyPublicDir: true,
   },
+  publicDir: "public",
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
