@@ -26,9 +26,21 @@ export default defineConfig({
           copyFileSync(".htaccess", "dist/.htaccess");
           copyFileSync("web.config", "dist/web.config");
           copyFileSync("_headers", "dist/_headers");
+          copyFileSync(".nojekyll", "dist/.nojekyll");
         } catch (error) {
           // Silently handle missing server config files
         }
+      },
+    },
+    // Plugin to ensure module script types
+    {
+      name: "module-script-fix",
+      transformIndexHtml(html) {
+        // Add meta tag for proper module loading and ensure absolute paths
+        const metaTag = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n    <meta name="js-mime-type" content="application/javascript">';
+        return html
+          .replace('<head>', `<head>\n    ${metaTag}`)
+          .replace(/src="\/assets\//g, 'src="./assets/');
       },
     },
   ],
@@ -42,6 +54,10 @@ export default defineConfig({
           ionic: ["@ionic/react"],
           icons: ["lucide-react"],
         },
+        // Ensure JS files have proper extensions
+        entryFileNames: '[name]-[hash].js',
+        chunkFileNames: '[name]-[hash].js',
+        assetFileNames: '[name]-[hash].[ext]'
       },
     },
     // Copy server configuration files to dist

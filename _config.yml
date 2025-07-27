@@ -1,0 +1,10 @@
+# GitHub Pages Jekyll configuration
+# This ensures proper MIME types for module scripts
+
+include:
+  - "_headers"
+  - ".htaccess"
+
+# Ensure JS files are served with correct MIME type
+plugins:
+  - jekyll-github-metadata
