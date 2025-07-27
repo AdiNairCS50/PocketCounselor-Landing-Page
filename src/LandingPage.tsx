@@ -14,7 +14,7 @@ interface LandingPageProps {
 
 const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   useEffect(() => {
-    document.title = "PocketCounselor - Expert Guidance in Your Pocket";
+    document.title = "PocketCounselor";
 
     const oldScrollFixStyle = document.getElementById(
       "landing-page-scroll-fix"
