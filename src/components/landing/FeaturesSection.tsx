@@ -65,7 +65,7 @@ const FeaturesSection: React.FC = () => {
     },
     {
       icon: <Building2Icon size={32} />, // 2rem
-      title: "College and Career Suggestions",
+      title: "College Suggestions",
       description:
         "Coming soon! AI analyzes your academic data to predict optimal college matches and career paths that align with your unique potential.",
     },

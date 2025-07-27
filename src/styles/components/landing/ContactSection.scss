@@ -21,12 +21,12 @@
 
 .contact-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 
   &__title {
     font-size: 2.5rem;
     font-weight: 800;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     color: #18181b;
     :root.dark & {
       color: #fff;
@@ -60,14 +60,14 @@
   border-radius: 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.1),
     0 1.5px 4px 0 rgba(31, 41, 55, 0.08);
-  padding: 1rem 2.25rem 2rem 2.25rem;
+  padding: 0rem 2.25rem 2rem 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   transition: box-shadow 0.3s;
 
   .contact-header__title {
-    margin-bottom: 0 !important;
+    margin-bottom: -1rem !important;
   }
 
   &:hover {

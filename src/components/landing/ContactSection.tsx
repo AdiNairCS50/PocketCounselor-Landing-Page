@@ -35,17 +35,7 @@ const ContactSection: React.FC = () => {
                 <div className="contact-info-desc">+1 (916) 282-9145</div>
               </div>
             </div>
-            <div className="contact-info-block">
-              <MapPin className="contact-info-icon" />
-              <div>
-                <div className="contact-info-title">Address</div>
-                <div className="contact-info-desc">
-                  1 Grizzly Way
-                  <br />
-                  Granite Bay, CA 95746
-                </div>
-              </div>
-            </div>
+            
           </div>
           {/* Send a Message Card */}
           <div className="contact-card">
