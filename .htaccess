@@ -4,6 +4,16 @@ AddType text/javascript .mjs
 AddType application/javascript .js
 AddType application/javascript .mjs
 
+# Security Headers
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "DENY"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://submit-form.com https://formspree.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://submit-form.com https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://submit-form.com https://formspree.io"
+</IfModule>
+
 # Enable compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
@@ -29,5 +39,7 @@ AddType application/javascript .mjs
     RewriteRule ^index\.html$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+    # Only rewrite safe idempotent GETs
+    RewriteCond %{REQUEST_METHOD} GET
     RewriteRule . /index.html [L]
 </IfModule>
