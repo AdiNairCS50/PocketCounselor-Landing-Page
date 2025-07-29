@@ -1,0 +1,23 @@
+// Typewriter.scss
+
+.typewriter-cursor {
+  animation: blink 1s infinite;
+  color: white;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+// Hide cursor after typing is complete
+.typewriter-complete .typewriter-cursor {
+  display: none;
+}

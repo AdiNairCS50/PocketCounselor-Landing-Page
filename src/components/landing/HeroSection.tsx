@@ -1,6 +1,8 @@
 import React from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
+import Typewriter from "../shared/Typewriter";
 import "../../styles/components/landing/HeroSection.scss";
+import "../../styles/components/shared/Typewriter.scss";
 
 interface HeroSectionProps {
   onGetStarted?: () => void;
@@ -31,7 +33,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
             <Sparkles size={16} className="hero-badge__sparkles" />
             AI-powered
           </div>
-          <h1 className="hero-title">Your Counselor in Your Pocket</h1>
+          <h1 className="hero-title">
+            <Typewriter
+              text="Your Counselor in Your Pocket"
+              speed={80}
+              delay={500}
+              className="typewriter-text"
+            />
+          </h1>
           <p className="hero-description">
             Your one stop solution for all your high school needs. Find
             AI-powered and enhanced opportunities, and much more!
