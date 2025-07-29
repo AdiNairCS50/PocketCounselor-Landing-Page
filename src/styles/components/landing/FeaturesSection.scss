@@ -64,6 +64,7 @@
   align-items: center;
   text-align: center;
   transition: all 0.3s ease;
+  opacity: 0; // Start completely transparent until animation is applied
 
   &:hover {
     border-color: rgba(218, 179, 255, 0.4);
@@ -129,52 +130,5 @@
   font-size: 1rem;
   :root.dark & {
     color: var(--ion-color-light-shade);
-  }
-}
-
-// Animation states for scroll-triggered animations
-.feature-card--hidden {
-  opacity: 0.3;
-  transform: translateY(10px);
-  filter: blur(8px) contrast(0.5);
-  transition: none; // Disable transition initially
-}
-
-.feature-card--visible {
-  opacity: 1;
-  transform: translateY(0);
-  filter: none;
-  animation: pixelDissolveIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-
-  // Consistent animation for all devices
-  @media (max-width: 768px) {
-    animation: pixelDissolveIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      forwards;
-  }
-}
-
-// Pixelated dissolve-in animation
-@keyframes pixelDissolveIn {
-  0% {
-    opacity: 0.3;
-    transform: translateY(10px) scale(0.98);
-    filter: blur(12px) contrast(0.3) brightness(0.7);
-  }
-  30% {
-    opacity: 0.6;
-    filter: blur(8px) contrast(0.6) brightness(0.8);
-  }
-  60% {
-    opacity: 0.8;
-    filter: blur(4px) contrast(0.8) brightness(0.9);
-  }
-  80% {
-    opacity: 0.95;
-    filter: blur(1px) contrast(0.95) brightness(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: none;
   }
 }

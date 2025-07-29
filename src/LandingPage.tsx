@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { IonPage, IonContent } from "@ionic/react";
 import Header from "./components/shared/Header";
 import HeroSection from "./components/landing/HeroSection";
@@ -15,6 +15,11 @@ interface LandingPageProps {
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  const handleTypingComplete = () => {
+    setIsTypingComplete(true);
+  };
   useEffect(() => {
     // Store original title to restore later
     const originalTitle = document.title;
@@ -75,9 +80,15 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   return (
     <IonPage id="landing-page-ionic" className="landing-page">
       <IonContent fullscreen scrollY={true} className="landing-page-content">
-        <Header onGetStarted={onGetStarted} isLandingPage={true} />
+        <Header
+          onGetStarted={onGetStarted}
+          isTypingComplete={isTypingComplete}
+        />
         <main>
-          <HeroSection onGetStarted={onGetStarted} />
+          <HeroSection
+            onGetStarted={onGetStarted}
+            onTypingComplete={handleTypingComplete}
+          />
           <FeaturesSection />
           {/* <AppDemoSection />
           <TestimonialsSection /> */}

@@ -56,7 +56,7 @@ const ContactSection: React.FC = () => {
           {/* Contact Information Card */}
           <div
             className={`contact-card ${
-              isVisible ? "animate-slide-in-left animation-delay-400" : ""
+              isVisible ? "animate-slide-in-left animation-delay-800" : ""
             }`}
           >
             <h3 className="contact-header__title">Contact Information</h3>
@@ -80,7 +80,7 @@ const ContactSection: React.FC = () => {
           {/* Send a Message Card */}
           <div
             className={`contact-card ${
-              isVisible ? "animate-slide-in-right animation-delay-600" : ""
+              isVisible ? "animate-slide-in-right animation-delay-1000" : ""
             }`}
           >
             <h3 className="contact-header__title">Send a Message</h3>

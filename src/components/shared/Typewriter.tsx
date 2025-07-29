@@ -5,6 +5,7 @@ interface TypewriterProps {
   speed?: number;
   delay?: number;
   className?: string;
+  onComplete?: () => void;
 }
 
 const Typewriter: React.FC<TypewriterProps> = ({
@@ -12,6 +13,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
   speed = 100,
   delay = 0,
   className = "",
+  onComplete,
 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,8 +38,11 @@ const Typewriter: React.FC<TypewriterProps> = ({
       }, speed);
 
       return () => clearTimeout(timer);
+    } else if (currentIndex === text.length && onComplete) {
+      // Call onComplete when typing is finished
+      onComplete();
     }
-  }, [currentIndex, text, speed, isStarted]);
+  }, [currentIndex, text, speed, isStarted, onComplete]);
 
   return (
     <span className={className}>

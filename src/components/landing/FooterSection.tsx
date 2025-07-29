@@ -1,40 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import "../../styles/components/landing/FooterSection.scss";
 
 const FooterSection: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <footer className="footer-section" ref={sectionRef}>
+    <footer className="footer-section">
       <div className="footer-container">
         <div className="footer-main-grid">
-          <div
-            className={`footer-brand ${isVisible ? "animate-fade-in-up" : ""}`}
-          >
+          <div className="footer-brand">
             <h3>PocketCounselor</h3>
             <p>
               Your one stop solution for all your high school needs. Find
@@ -66,11 +38,7 @@ const FooterSection: React.FC = () => {
               </a>
             </div>
           </div>
-          <div
-            className={`footer-col ${
-              isVisible ? "animate-fade-in-up animation-delay-200" : ""
-            }`}
-          >
+          <div className="footer-col">
             <h3>Company (Soon)</h3>
             <ul>
               <li>
@@ -87,11 +55,7 @@ const FooterSection: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div
-            className={`footer-col ${
-              isVisible ? "animate-fade-in-up animation-delay-400" : ""
-            }`}
-          >
+          <div className="footer-col">
             <h3>Resources (Soon)</h3>
             <ul>
               <li>
@@ -108,11 +72,7 @@ const FooterSection: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div
-            className={`footer-col ${
-              isVisible ? "animate-fade-in-up animation-delay-600" : ""
-            }`}
-          >
+          <div className="footer-col">
             <h3>Download App (Soon)</h3>
             <div className="footer-app-badges">
               <a href="#">
@@ -130,11 +90,7 @@ const FooterSection: React.FC = () => {
             </div>
           </div>
         </div>
-        <div
-          className={`footer-divider ${
-            isVisible ? "animate-fade-in-up animation-delay-800" : ""
-          }`}
-        >
+        <div className="footer-divider">
           <p className="footer-copyright">
             © {new Date().getFullYear()} PocketCounselor. All rights reserved.
           </p>

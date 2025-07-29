@@ -23,12 +23,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   isVisible = false,
   delay = 0,
 }) => {
+  // Convert delay to CSS class
+  const delayClass = `animation-delay-${delay}`;
+
   return (
     <IonCard
       className={`feature-card ${
-        isVisible ? "feature-card--visible" : "feature-card--hidden"
+        isVisible ? `animate-fade-in-up ${delayClass}` : ""
       }`}
-      style={{ animationDelay: `${delay}ms` }}
       button={false}
     >
       <div className="feature-card__icon">{icon}</div>
@@ -133,7 +135,7 @@ const FeaturesSection: React.FC = () => {
           </h2>
           <p
             className={`features-header__description ${
-              isVisible ? "animate-fade-in-up animation-delay-200" : ""
+              isVisible ? "animate-fade-in-up animation-delay-400" : ""
             }`}
           >
             Our AI-powered platform discovers and matches you with the perfect
@@ -149,7 +151,7 @@ const FeaturesSection: React.FC = () => {
               title={feature.title}
               description={feature.description}
               isVisible={isVisible}
-              delay={index * 250} // Stagger animation by 250ms per card
+              delay={800 + index * 200} // 800, 1000, 1200, 1400
             />
           ))}
         </div>

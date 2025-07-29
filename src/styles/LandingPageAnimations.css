@@ -1,6 +1,16 @@
 /* ===============================================
    LANDING PAGE SPECIFIC ANIMATIONS
-   These animations only apply to the landing page
+   These animations only apply to th.landing-page .animation-delay-900 {
+  animation-delay: 0.9s;
+}
+
+.landing-page .animation-delay-1000 {
+  animation-delay: 1.0s;
+}
+
+.landing-page .animation-delay-1200 {
+  animation-delay: 1.2s;
+}ng page
    =============================================== */
 
 /* Animation keyframes - global but only used on landing page */
@@ -48,23 +58,54 @@
 
 /* Animation classes - scoped to landing page only */
 .landing-page .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 1s ease-out forwards;
   opacity: 0; /* Start invisible */
 }
 
 .landing-page .animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
   opacity: 0;
 }
 
 .landing-page .animate-slide-in-left {
-  animation: slideInLeft 0.8s ease-out forwards;
+  animation: slideInLeft 1s ease-out forwards;
   opacity: 0;
 }
 
 .landing-page .animate-slide-in-right {
-  animation: slideInRight 0.8s ease-out forwards;
+  animation: slideInRight 1s ease-out forwards;
   opacity: 0;
+}
+
+/* Ensure ALL text elements and cards start transparent until animation is applied */
+.landing-page .features-header__title:not(.animate-fade-in-up),
+.landing-page .features-header__description:not(.animate-fade-in-up),
+.landing-page .feature-card:not(.animate-fade-in-up),
+.landing-page .contact-header .contact-header__title:not(.animate-fade-in-up),
+.landing-page
+  .contact-header
+  .contact-header__description:not(.animate-fade-in-up),
+.landing-page
+  .contact-card:not(.animate-slide-in-left):not(.animate-slide-in-right),
+.landing-page .testimonials-header__title:not(.animate-fade-in-up),
+.landing-page .testimonials-header__description:not(.animate-fade-in-up),
+.landing-page .testimonial-card:not(.animate-fade-in-up),
+.landing-page .header:not(.animate-fade-in-up),
+.landing-page .hero-badge:not(.animate-fade-in-up),
+.landing-page .hero-description:not(.animate-fade-in-up),
+.landing-page .scroll-indicator:not(.animate-fade-in-up) {
+  opacity: 0;
+}
+
+/* Hero buttons should start transparent until they get animation classes */
+.landing-page .hero-buttons .btn-secondary:not(.animate-fade-in-up),
+.landing-page .hero-buttons .btn-primary:not(.animate-fade-in-up) {
+  opacity: 0;
+}
+
+/* Contact card titles should be visible when their parent cards animate in */
+.landing-page .contact-card .contact-header__title {
+  opacity: 1 !important;
 }
 
 /* Animation delays for staggered effect - scoped to landing page */
@@ -100,9 +141,47 @@
   animation-delay: 0.8s;
 }
 
+.landing-page .animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.landing-page .animation-delay-1200 {
+  animation-delay: 1.2s;
+}
+
+.landing-page .animation-delay-1400 {
+  animation-delay: 1.4s;
+}
+
+.landing-page .animation-delay-800 {
+  animation-delay: 0.8s;
+}
+
+.landing-page .animation-delay-1100 {
+  animation-delay: 1.1s;
+}
+
+.landing-page .animation-delay-1500 {
+  animation-delay: 1.5s;
+}
+
+.landing-page .animation-delay-900 {
+  animation-delay: 0.9s;
+}
+
+.landing-page .animation-delay-1400 {
+  animation-delay: 1.4s;
+}
+.landing-page .animation-delay-2000 {
+  animation-delay: 2s;
+}
+.landing-page .animation-delay-2500 {
+  animation-delay: 2.5s;
+}
+
 /* Header animation - only when on landing page */
 .landing-page .header.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.6s ease-out forwards;
   opacity: 0;
 }
 

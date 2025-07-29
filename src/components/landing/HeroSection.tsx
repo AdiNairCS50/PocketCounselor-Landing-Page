@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Typewriter from "../shared/Typewriter";
 import "../../styles/components/landing/HeroSection.scss";
@@ -6,9 +6,22 @@ import "../../styles/components/shared/Typewriter.scss";
 
 interface HeroSectionProps {
   onGetStarted?: () => void;
+  onTypingComplete?: () => void;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({
+  onGetStarted,
+  onTypingComplete,
+}) => {
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  const handleTypingComplete = () => {
+    setIsTypingComplete(true);
+    if (onTypingComplete) {
+      onTypingComplete();
+    }
+  };
+
   const handleGetStarted = () => {
     if (onGetStarted) {
       onGetStarted();
@@ -28,8 +41,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
       </div>
 
       <div className="hero-container">
-        <div className="content-box">
-          <div className="hero-badge animate-fade-in-up">
+        <div className="content-box animate-fade-in-up">
+          <div
+            className={`hero-badge ${
+              isTypingComplete ? "animate-fade-in-up animation-delay-800" : ""
+            }`}
+          >
             <Sparkles size={16} className="hero-badge__sparkles" />
             AI-powered
           </div>
@@ -37,28 +54,51 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
             <Typewriter
               text="Your Counselor in Your Pocket"
               speed={80}
-              delay={500}
+              delay={1000}
               className="typewriter-text"
+              onComplete={handleTypingComplete}
             />
           </h1>
-          <p className="hero-description animate-fade-in-up animation-delay-200">
+          <p
+            className={`hero-description ${
+              isTypingComplete ? "animate-fade-in-up animation-delay-1500" : ""
+            }`}
+          >
             Your one stop solution for all your high school needs. Find
             AI-powered and enhanced opportunities, and much more!
           </p>
-          <div className="hero-buttons animate-fade-in-up animation-delay-400">
-            <button className="btn-primary" onClick={handleGetStarted}>
+          <div className="hero-buttons">
+            <a
+              href="#features"
+              className={`btn-secondary ${
+                isTypingComplete
+                  ? "animate-fade-in-up animation-delay-2000"
+                  : ""
+              }`}
+            >
+              Learn More
+            </a>
+            <button
+              className={`btn-primary ${
+                isTypingComplete
+                  ? "animate-fade-in-up animation-delay-2500"
+                  : ""
+              }`}
+              onClick={handleGetStarted}
+            >
               Join Waitlist
               <ArrowRight className="arrow-icon" />
             </button>
-            <a href="#features" className="btn-secondary">
-              Learn More
-            </a>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="scroll-indicator animate-fade-in-up animation-delay-600">
+      <div
+        className={`scroll-indicator ${
+          isTypingComplete ? "animate-fade-in-up animation-delay-1400" : ""
+        }`}
+      >
         <a href="#features" aria-label="Scroll to features section">
           <svg
             xmlns="http://www.w3.org/2000/svg"
