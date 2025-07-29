@@ -7,13 +7,18 @@ const logoUrl = "/images/PC-WhiteBackground.png";
 
 interface HeaderProps {
   onGetStarted?: () => void;
+  isLandingPage?: boolean; // New prop to indicate if we're on landing page
 }
 
-const Header: React.FC<HeaderProps> = ({ onGetStarted }) => {
+const Header: React.FC<HeaderProps> = ({
+  onGetStarted,
+  isLandingPage = false,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleGetStarted = () => {
     setIsMenuOpen(false);
@@ -23,6 +28,11 @@ const Header: React.FC<HeaderProps> = ({ onGetStarted }) => {
   };
 
   useEffect(() => {
+    // Trigger header animation on page load
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
@@ -64,7 +74,11 @@ const Header: React.FC<HeaderProps> = ({ onGetStarted }) => {
   ];
 
   return (
-    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+    <header
+      className={`header ${isScrolled ? "scrolled" : ""} ${
+        isLandingPage && isLoaded ? "animate-fade-in-up" : ""
+      }`}
+    >
       <div className="header-container">
         <div className="header-inner">
           {/* Logo */}

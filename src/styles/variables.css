@@ -31,43 +31,11 @@ http://ionicframework.com/docs/theming/ */
   /* TYPOGRAPHY */
   --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
-
-  /* ANIMATIONS */
-  --animate-fade-in: fadeIn 0.5s ease-in-out;
-  --animate-slide-up: slideUp 0.5s ease-out;
 }
 
 /* Respect user's motion preferences for accessibility */
 @media (prefers-reduced-motion: reduce) {
-  :root {
-    --animate-fade-in: none;
-    --animate-slide-up: none;
-  }
-}
-
-/* Animation keyframes */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Additional accessibility: Disable all animations and transitions for reduced motion */
-@media (prefers-reduced-motion: reduce) {
+  /* Additional accessibility: Disable all animations and transitions for reduced motion */
   *,
   *::before,
   *::after {

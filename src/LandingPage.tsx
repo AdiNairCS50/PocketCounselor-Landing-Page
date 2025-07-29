@@ -3,10 +3,12 @@ import { IonPage, IonContent } from "@ionic/react";
 import Header from "./components/shared/Header";
 import HeroSection from "./components/landing/HeroSection";
 import FeaturesSection from "./components/landing/FeaturesSection";
+// import AppDemoSection from "./components/landing/AppDemoSection";
+// import TestimonialsSection from "./components/landing/TestimonialsSection";
 import ContactSection from "./components/landing/ContactSection";
 import FooterSection from "./components/landing/FooterSection";
-import AppDemoSection from "./components/landing/AppDemoSection";
 import "./styles/LandingPage.scss";
+import "./styles/LandingPageAnimations.css";
 
 interface LandingPageProps {
   onGetStarted?: () => void;
@@ -14,6 +16,8 @@ interface LandingPageProps {
 
 const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   useEffect(() => {
+    // Store original title to restore later
+    const originalTitle = document.title;
     document.title = "PocketCounselor";
 
     const oldScrollFixStyle = document.getElementById(
@@ -23,6 +27,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       oldScrollFixStyle.remove();
     }
 
+    // Store original body position to restore later
+    const originalBodyPosition = document.body.style.position;
     document.body.style.position = "static";
 
     const handleAnchorClick = (e: MouseEvent) => {
@@ -58,19 +64,23 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     document.addEventListener("click", handleAnchorClick);
 
     return () => {
-      document.body.style.removeProperty("position");
+      // Restore original title and body position
+      document.title = originalTitle;
+      document.body.style.position = originalBodyPosition || "";
 
       document.removeEventListener("click", handleAnchorClick);
     };
   }, []);
 
   return (
-    <IonPage id="landing-page-ionic">
+    <IonPage id="landing-page-ionic" className="landing-page">
       <IonContent fullscreen scrollY={true} className="landing-page-content">
-        <Header onGetStarted={onGetStarted} />
+        <Header onGetStarted={onGetStarted} isLandingPage={true} />
         <main>
           <HeroSection onGetStarted={onGetStarted} />
           <FeaturesSection />
+          {/* <AppDemoSection />
+          <TestimonialsSection /> */}
           <ContactSection />
         </main>
         <FooterSection />

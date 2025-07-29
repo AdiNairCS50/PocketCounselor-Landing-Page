@@ -124,10 +124,18 @@ const FeaturesSection: React.FC = () => {
     <section className="features-section" id="features" ref={sectionRef}>
       <div className="features-container">
         <div className="features-header">
-          <h2 className="features-header__title">
+          <h2
+            className={`features-header__title ${
+              isVisible ? "animate-fade-in-up" : ""
+            }`}
+          >
             Why Choose PocketCounselor?
           </h2>
-          <p className="features-header__description">
+          <p
+            className={`features-header__description ${
+              isVisible ? "animate-fade-in-up animation-delay-200" : ""
+            }`}
+          >
             Our AI-powered platform discovers and matches you with the perfect
             opportunities. No more endless searching - we find exactly what you
             need:

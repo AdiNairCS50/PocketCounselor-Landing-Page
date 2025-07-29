@@ -18,18 +18,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
   return (
     <section className="hero-section" id="hero">
       {/* Background gradient */}
-      <div className="bg-gradient-overlay"></div>
+      <div className="bg-gradient-overlay animate-fade-in"></div>
 
       {/* Abstract shapes */}
       <div className="abstract-shapes-overlay">
-        <div className="shape-top-left"></div>
-        <div className="shape-bottom-right"></div>
-        <div className="shape-center"></div>
+        <div className="shape-top-left animate-fade-in animation-delay-100"></div>
+        <div className="shape-bottom-right animate-fade-in animation-delay-200"></div>
+        <div className="shape-center animate-fade-in animation-delay-300"></div>
       </div>
 
       <div className="hero-container">
         <div className="content-box">
-          <div className="hero-badge">
+          <div className="hero-badge animate-fade-in-up">
             <Sparkles size={16} className="hero-badge__sparkles" />
             AI-powered
           </div>
@@ -41,11 +41,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
               className="typewriter-text"
             />
           </h1>
-          <p className="hero-description">
+          <p className="hero-description animate-fade-in-up animation-delay-200">
             Your one stop solution for all your high school needs. Find
             AI-powered and enhanced opportunities, and much more!
           </p>
-          <div className="hero-buttons">
+          <div className="hero-buttons animate-fade-in-up animation-delay-400">
             <button className="btn-primary" onClick={handleGetStarted}>
               Join Waitlist
               <ArrowRight className="arrow-icon" />
@@ -58,7 +58,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="scroll-indicator">
+      <div className="scroll-indicator animate-fade-in-up animation-delay-600">
         <a href="#features" aria-label="Scroll to features section">
           <svg
             xmlns="http://www.w3.org/2000/svg"

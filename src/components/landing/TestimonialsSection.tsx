@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IonCard, IonCardContent } from "@ionic/react";
 import "../../styles/components/landing/TestimonialSection.scss";
 
@@ -7,6 +7,8 @@ interface TestimonialProps {
   name: string;
   role: string;
   rating: number;
+  isVisible?: boolean;
+  delay?: number;
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({
@@ -14,9 +16,14 @@ const Testimonial: React.FC<TestimonialProps> = ({
   name,
   role,
   rating,
+  isVisible = false,
+  delay = 0,
 }) => {
   return (
-    <IonCard className="testimonial-card">
+    <IonCard
+      className={`testimonial-card ${isVisible ? "animate-fade-in-up" : ""}`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
       <IonCardContent>
         {/* Rating stars */}
         <div className="testimonial-rating">
@@ -47,6 +54,9 @@ const Testimonial: React.FC<TestimonialProps> = ({
 };
 
 const TestimonialsSection: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   const testimonials = [
     {
       quote:
@@ -71,12 +81,49 @@ const TestimonialsSection: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -100px 0px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="testimonials-section" id="testimonials">
+    <section
+      className="testimonials-section"
+      id="testimonials"
+      ref={sectionRef}
+    >
       <div className="testimonials-container">
         <div className="testimonials-header">
-          <h2 className="testimonials-header__title">What Our Users Say</h2>
-          <p className="testimonials-header__description">
+          <h2
+            className={`testimonials-header__title ${
+              isVisible ? "animate-fade-in-up" : ""
+            }`}
+          >
+            What Our Users Say
+          </h2>
+          <p
+            className={`testimonials-header__description ${
+              isVisible ? "animate-fade-in-up animation-delay-200" : ""
+            }`}
+          >
             PocketCounselor aims to helps thousands of students struggling to
             find the right resources to succeed in high school and beyond.
           </p>
@@ -89,6 +136,8 @@ const TestimonialsSection: React.FC = () => {
               name={testimonial.name}
               role={testimonial.role}
               rating={testimonial.rating}
+              isVisible={isVisible}
+              delay={400 + index * 200} // Start at 400ms, then 200ms apart
             />
           ))}
         </div>

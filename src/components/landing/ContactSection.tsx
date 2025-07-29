@@ -1,23 +1,64 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Mail, Phone, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 import "../../styles/components/landing/ContactSection.scss";
 
 const ContactSection: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   // Get Formspree form ID from environment variables
   const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_FORM_ID);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -100px 0px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section" id="contact" ref={sectionRef}>
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="contact-header__title">Get in Touch</h2>
-          <p className="contact-header__description">
+          <h2
+            className={`contact-header__title ${
+              isVisible ? "animate-fade-in-up" : ""
+            }`}
+          >
+            Get in Touch
+          </h2>
+          <p
+            className={`contact-header__description ${
+              isVisible ? "animate-fade-in-up animation-delay-200" : ""
+            }`}
+          >
             Have questions about PocketCounselor? We're here to help!
           </p>
         </div>
         <div className="contact-main-grid">
           {/* Contact Information Card */}
-          <div className="contact-card">
+          <div
+            className={`contact-card ${
+              isVisible ? "animate-slide-in-left animation-delay-400" : ""
+            }`}
+          >
             <h3 className="contact-header__title">Contact Information</h3>
             <div className="contact-info-block">
               <Mail className="contact-info-icon" />
@@ -35,10 +76,13 @@ const ContactSection: React.FC = () => {
                 <div className="contact-info-desc">+1 (916) 282-9145</div>
               </div>
             </div>
-            
           </div>
           {/* Send a Message Card */}
-          <div className="contact-card">
+          <div
+            className={`contact-card ${
+              isVisible ? "animate-slide-in-right animation-delay-600" : ""
+            }`}
+          >
             <h3 className="contact-header__title">Send a Message</h3>
             <form className="contact-form" onSubmit={handleSubmit}>
               <div>
