@@ -61,7 +61,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
 
       // Don't auto-close - let user manually close the modal
     } catch (error) {
-      setError("Failed to join waitlist. Please try again.");
+      setError("Failed to join. Please try again.");
       setIsSubmitting(false);
     }
   };
@@ -83,10 +83,13 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
         <div className="waitlist-modal-content">
           {!isSubmitted ? (
             <>
-              <h2 className="waitlist-modal-title">Join the Waitlist</h2>
+              <h2 className="waitlist-modal-title">
+                Get Exclusive Early Access!
+              </h2>
               <p className="waitlist-modal-description">
-                Be the first to know when PocketCounselor launches. Get early
-                access and exclusive updates!
+                Skip the line and be among the first to experience
+                PocketCounselor. Join our VIP early access program for exclusive
+                features and priority support!
               </p>
 
               {error && <div className="waitlist-error">{error}</div>}
@@ -121,22 +124,24 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                   className="waitlist-submit-btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Joining..." : "Join Waitlist"}
+                  {isSubmitting ? "Securing Access..." : "Claim Early Access"}
                 </button>
               </form>
             </>
           ) : (
             <div className="waitlist-success">
-              <div className="waitlist-success-icon">📧</div>
-              <h2 className="waitlist-success-title">Check Your Email!</h2>
+              <div className="waitlist-success-icon">🎉</div>
+              <h2 className="waitlist-success-title">Early Access Secured!</h2>
               <p className="waitlist-success-description">
-                We've sent a verification email to <strong>{email}</strong> from{" "}
-                <strong>pocketcounselorco@gmail.com</strong>. Please click the
-                verification link to secure your spot on the waitlist.
+                Congratulations! We've sent your VIP access confirmation to{" "}
+                <strong>{email}</strong> from{" "}
+                <strong>pocketcounselorco@gmail.com</strong>. Click the
+                verification link to activate your early access privileges.
               </p>
               <p className="waitlist-success-note">
-                Don't see it? Check your SPAM folder and ADD
-                pocketcounselorco@gmail.com to your contacts for future updates.
+                Can't find it? Check your SPAM folder and add
+                pocketcounselorco@gmail.com to your contacts to ensure you don't
+                miss any exclusive updates.
               </p>
             </div>
           )}

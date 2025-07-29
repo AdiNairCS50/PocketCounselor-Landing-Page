@@ -1,9 +1,25 @@
 // Typewriter.scss
 
+// Typewriter.scss
+
+.typewriter-text {
+  color: inherit;
+}
+
 .typewriter-cursor {
+  display: inline-block;
+  opacity: 1;
   animation: blink 1s infinite;
-  color: white;
-  font-weight: normal;
+  color: #ff8080 !important; /* Make cursor always red for testing */
+}
+
+/* Override hero title color specifically for cursor */
+.hero-title .typewriter-cursor {
+  color: #ff8080 !important;
+}
+
+.typewriter-highlight {
+  color: #ff8080; /* Pastel red */
 }
 
 @keyframes blink {

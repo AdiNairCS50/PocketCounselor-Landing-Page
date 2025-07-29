@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({
               }`}
               onClick={handleGetStarted}
             >
-              Join Waitlist
+              Start Now
             </button>
           </nav>
 

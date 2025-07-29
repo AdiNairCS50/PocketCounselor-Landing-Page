@@ -48,15 +48,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             }`}
           >
             <Sparkles size={16} className="hero-badge__sparkles" />
-            AI-powered
+            Limited Early Access
           </div>
           <h1 className="hero-title">
             <Typewriter
-              text="Your Counselor in Your Pocket"
+              text="Your VIP Access Awaits"
               speed={80}
               delay={1000}
               className="typewriter-text"
               onComplete={handleTypingComplete}
+              highlightWord="VIP"
             />
           </h1>
           <p
@@ -64,8 +65,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               isTypingComplete ? "animate-fade-in-up animation-delay-1500" : ""
             }`}
           >
-            Your one stop solution for all your high school needs. Find
-            AI-powered and enhanced opportunities, and much more!
+            Join an exclusive group of high achievers getting first access to
+            AI-powered opportunities & resources. Only 500 early access spots
+            available.
           </p>
           <div className="hero-buttons">
             <a
@@ -76,7 +78,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   : ""
               }`}
             >
-              Learn More
+              See What's Inside
             </a>
             <button
               className={`btn-primary ${
@@ -86,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               }`}
               onClick={handleGetStarted}
             >
-              Join Waitlist
+              Claim Your Spot
               <ArrowRight className="arrow-icon" />
             </button>
           </div>
