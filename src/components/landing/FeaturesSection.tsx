@@ -49,7 +49,7 @@ const FeaturesSection: React.FC = () => {
   const features = [
     {
       icon: <BriefcaseBusinessIcon size={32} />, // 2rem
-      title: "Internships",
+      title: "Internships/Programs",
       description:
         "Discover internships perfectly matched to your background, interests, and career goals. Our AI analyzes thousands of opportunities to find your ideal fit.",
     },
