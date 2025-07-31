@@ -51,25 +51,25 @@ const FeaturesSection: React.FC = () => {
       icon: <BriefcaseBusinessIcon size={32} />, // 2rem
       title: "Internships/Programs",
       description:
-        "Discover internships perfectly matched to your background, interests, and career goals. Our AI analyzes thousands of opportunities to find your ideal fit.",
+        "Discover internships perfectly matched to your background, interests, and career goals. Our AI analyzes 1000+ opportunities to find your ideal fit.",
     },
     {
       icon: <UsersIcon size={32} />, // 2rem
       title: "Volunteer Opportunities",
       description:
-        "Coming soon! Find volunteer opportunities that match your skills and interests. Make a positive impact while building your resume.",
+        "Find volunteer opportunities that match your skills and interests. Make a positive impact while building your resume.",
     },
     {
       icon: <MailIcon size={32} />, // 2rem
       title: "Course Selections",
       description:
-        "Coming soon! Get personalized AI-powered course recommendations based on your academic profile and career goals.",
+        "Get personalized AI-powered course recommendations based on your academic profile and career goals. Helps you choose the right courses.",
     },
     {
       icon: <Building2Icon size={32} />, // 2rem
       title: "College Suggestions",
       description:
-        "Coming soon! AI analyzes your academic data to predict optimal college matches and career paths that align with your unique potential.",
+        "AI analyzes your academic data to predict optimal college matches and career paths that align with your unique potential. ",
     },
   ];
 

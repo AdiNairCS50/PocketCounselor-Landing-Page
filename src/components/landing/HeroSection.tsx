@@ -52,12 +52,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
           <h1 className="hero-title">
             <Typewriter
-              text="Your VIP Access Awaits"
+              text="Your Future Starts Here"
               speed={80}
               delay={1000}
               className="typewriter-text"
               onComplete={handleTypingComplete}
-              highlightWord="VIP"
+              highlightWord="Here"
             />
           </h1>
           <p
@@ -65,9 +65,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               isTypingComplete ? "animate-fade-in-up animation-delay-1500" : ""
             }`}
           >
-            Join an exclusive group of high achievers getting first access to
-            AI-powered opportunities & resources. Only 500 early access spots
-            available.
+            Find AI-powered opportunities and resources tailored to you.
+            <br />
+            No more guesswork. No more wasted time. Just results.
           </p>
           <div className="hero-buttons">
             <a
@@ -78,7 +78,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   : ""
               }`}
             >
-              See What's Inside
+              Why PocketCounselor?
             </a>
             <button
               className={`btn-primary ${
@@ -88,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               }`}
               onClick={handleGetStarted}
             >
-              Claim Your Spot
+              Start Now
               <ArrowRight className="arrow-icon" />
             </button>
           </div>
