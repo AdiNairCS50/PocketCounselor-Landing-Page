@@ -135,13 +135,14 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
               <p className="waitlist-success-description">
                 Congratulations! We've sent your VIP access confirmation to{" "}
                 <strong>{email}</strong> from{" "}
-                <strong>pocketcounselorco@gmail.com</strong>. Click the
-                verification link to activate your early access privileges.
+                <strong>pocketcounselorco@gmail.com</strong>.
+                <br />
+                <br />
+                CHECK YOUR <strong>SPAM </strong> FOLDER!
               </p>
               <p className="waitlist-success-note">
-                Can't find it? Check your SPAM folder and add
-                pocketcounselorco@gmail.com to your contacts to ensure you don't
-                miss any exclusive updates.
+                We are currently in the process of deploying the app. We will
+                send you an email when it is ready.
               </p>
             </div>
           )}
