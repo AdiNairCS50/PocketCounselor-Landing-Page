@@ -88,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               }`}
               onClick={handleGetStarted}
             >
-              Click Here
+              Surprise!
               <ArrowRight className="arrow-icon" />
             </button>
           </div>
