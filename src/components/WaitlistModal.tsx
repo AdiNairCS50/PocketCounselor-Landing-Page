@@ -10,6 +10,7 @@ interface WaitlistModalProps {
 const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [school, setSchool] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -19,6 +20,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
     setIsSubmitted(false);
     setEmail("");
     setName("");
+    setSchool("");
     setError("");
     onClose();
   };
@@ -33,6 +35,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
       const formData = new FormData();
       formData.append("name", name);
       formData.append("email", email);
+      formData.append("school", school);
       formData.append("userAgent", navigator.userAgent);
       formData.append("timestamp", new Date().toISOString());
       formData.append("screenResolution", `${screen.width}x${screen.height}`);
@@ -43,7 +46,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
 
       // Send to Google Apps Script
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxQmDCJRgnEEOlxdjCstgpXuSCY3JOJWWAEBTItWknjPTgaVx4EKIOJSt9T-hKFGco/exec", // Replace with your NEW URL after redeployment
+        "https://script.google.com/macros/s/AKfycbwUS5fIrdmuhvsgYuxLcSDPLcZxktr4-CUsWlTGCqFL3VdPeARTqEUiM4-DOn55af-J/exec",
         {
           method: "POST",
           body: formData,
@@ -103,6 +106,18 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div className="waitlist-form-group">
+                  <label htmlFor="waitlist-school">School</label>
+                  <input
+                    id="waitlist-school"
+                    type="text"
+                    value={school}
+                    onChange={(e) => setSchool(e.target.value)}
+                    placeholder="Your school"
                     required
                   />
                 </div>
